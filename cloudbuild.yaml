@@ -4,7 +4,7 @@ steps:
     args:
       - '--bucket=gs://$_CACHE_BUCKET/'
       - '--key=resources-$( checksum package-lock.json )'
-      - '--key_fallback=resources-',
+      - '--key_fallback=resources-'
 
   - name: node
     entrypoint: npm
