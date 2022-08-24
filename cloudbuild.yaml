@@ -2,7 +2,7 @@ steps:
 
   - name: 'gcr.io/$PROJECT_ID/restore_cache'
     args:
-      - '--bucket=gs://$_CACHE_BUCKET/'
+      - '--bucket=gs://$_CACHE_BUCKET'
       - '--key=resources-$( checksum package-lock.json )'
       - '--key_fallback=resources-'
 
@@ -16,7 +16,7 @@ steps:
 
   - name: 'gcr.io/$PROJECT_ID/save_cache'
     args:
-      - '--bucket=gs://$_CACHE_BUCKET/'
+      - '--bucket=gs://$_CACHE_BUCKET'
       - '--key=resources-$( checksum package-lock.json )'
       - '--path=node_modules'
       - '--no-clobber'
